@@ -1,0 +1,24 @@
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.counter = undefined;
+
+var _redux = require('redux');
+
+var counter = exports.counter = function counter() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'INCREMENT':
+			return state + 1;
+		case 'RESET':
+			return 0;
+		default:
+			return state;
+	}
+};
+
+var store = (0, _redux.createStore)(counter);
+
+exports.default = store;

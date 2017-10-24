@@ -1,0 +1,110 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+var _jsxFileName = '/home/jolszewski/Documents/ReactNativeApps/VydiaProject/node_modules/expo/src/RNPublisherBanner.js';
+
+var _react = require('react');
+
+var _react2 = babelHelpers.interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var RNBanner = (0, _reactNative.requireNativeComponent)('RNAdMobDFP', PublisherBanner);
+
+var PublisherBanner = function (_React$Component) {
+  babelHelpers.inherits(PublisherBanner, _React$Component);
+
+  function PublisherBanner() {
+    babelHelpers.classCallCheck(this, PublisherBanner);
+
+    var _this = babelHelpers.possibleConstructorReturn(this, (PublisherBanner.__proto__ || Object.getPrototypeOf(PublisherBanner)).call(this));
+
+    _this.onSizeChange = _this.onSizeChange.bind(_this);
+    _this.state = {
+      style: {}
+    };
+    return _this;
+  }
+
+  babelHelpers.createClass(PublisherBanner, [{
+    key: 'onSizeChange',
+    value: function onSizeChange(event) {
+      var _event$nativeEvent = event.nativeEvent,
+          height = _event$nativeEvent.height,
+          width = _event$nativeEvent.width;
+
+      this.setState({ style: { width: width, height: height } });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          adUnitID = _props.adUnitID,
+          testDeviceID = _props.testDeviceID,
+          bannerSize = _props.bannerSize,
+          style = _props.style,
+          didFailToReceiveAdWithError = _props.didFailToReceiveAdWithError,
+          admobDispatchAppEvent = _props.admobDispatchAppEvent;
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: this.props.style, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          }
+        },
+        _react2.default.createElement(RNBanner, {
+          style: this.state.style,
+          onSizeChange: this.onSizeChange.bind(this),
+          onAdViewDidReceiveAd: this.props.adViewDidReceiveAd,
+          onDidFailToReceiveAdWithError: function onDidFailToReceiveAdWithError(event) {
+            return didFailToReceiveAdWithError(event.nativeEvent.error);
+          },
+          onAdViewWillPresentScreen: this.props.adViewWillPresentScreen,
+          onAdViewWillDismissScreen: this.props.adViewWillDismissScreen,
+          onAdViewDidDismissScreen: this.props.adViewDidDismissScreen,
+          onAdViewWillLeaveApplication: this.props.adViewWillLeaveApplication,
+          onAdmobDispatchAppEvent: function onAdmobDispatchAppEvent(event) {
+            return admobDispatchAppEvent(event);
+          },
+          testDeviceID: testDeviceID,
+          adUnitID: adUnitID,
+          bannerSize: bannerSize,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          }
+        })
+      );
+    }
+  }]);
+  return PublisherBanner;
+}(_react2.default.Component);
+
+exports.default = PublisherBanner;
+
+
+PublisherBanner.propTypes = babelHelpers.extends({
+  style: _reactNative.View.propTypes.style,
+
+  bannerSize: _react2.default.PropTypes.string,
+
+  adUnitID: _react2.default.PropTypes.string,
+
+  testDeviceID: _react2.default.PropTypes.string,
+
+  adViewDidReceiveAd: _react2.default.PropTypes.func,
+  didFailToReceiveAdWithError: _react2.default.PropTypes.func,
+  adViewWillPresentScreen: _react2.default.PropTypes.func,
+  adViewWillDismissScreen: _react2.default.PropTypes.func,
+  adViewDidDismissScreen: _react2.default.PropTypes.func,
+  adViewWillLeaveApplication: _react2.default.PropTypes.func,
+  admobDispatchAppEvent: _react2.default.PropTypes.func
+}, _reactNative.View.propTypes);
+
+PublisherBanner.defaultProps = {
+  bannerSize: 'smartBannerPortrait',
+  didFailToReceiveAdWithError: function didFailToReceiveAdWithError() {},
+  admobDispatchAppEvent: function admobDispatchAppEvent() {}
+};

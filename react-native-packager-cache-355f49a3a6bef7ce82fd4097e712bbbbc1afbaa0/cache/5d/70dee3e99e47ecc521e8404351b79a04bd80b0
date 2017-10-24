@@ -1,0 +1,112 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/home/jolszewski/Documents/ReactNativeApps/VydiaProject/components/Counter.js';
+
+var _react = require('react');
+
+var _react2 = babelHelpers.interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var Counter = function (_Component) {
+  babelHelpers.inherits(Counter, _Component);
+
+  function Counter() {
+    babelHelpers.classCallCheck(this, Counter);
+    return babelHelpers.possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+  }
+
+  babelHelpers.createClass(Counter, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: styles.container, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.Text,
+          {
+            style: styles.counter, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            }
+          },
+          this.props.count
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableHighlight,
+          {
+            style: styles.button,
+            onPress: this.props.increment, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Text,
+            {
+              style: styles.buttonText, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 25
+              }
+            },
+            '+'
+          )
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableHighlight,
+          {
+            style: styles.button,
+            onPress: this.props.reset, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 32
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Text,
+            {
+              style: styles.buttonText, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 35
+              }
+            },
+            'Reset'
+          )
+        )
+      );
+    }
+  }]);
+  return Counter;
+}(_react.Component);
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  counter: {
+    alignSelf: 'center',
+    fontSize: 26,
+    fontWeight: 'bold'
+  },
+  button: {
+    borderRadius: 5,
+    padding: 20,
+    margin: 10,
+    justifyContent: 'center',
+    backgroundColor: 'black'
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 25,
+    alignSelf: 'center'
+  }
+});
+
+exports.default = Counter;

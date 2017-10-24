@@ -1,0 +1,24 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = babelHelpers.interopRequireDefault(_react);
+
+var _reactNavigation = require('react-navigation');
+
+var _MainScreen = require('./components/MainScreen');
+
+var _MainScreen2 = babelHelpers.interopRequireDefault(_MainScreen);
+
+var _CounterScreen = require('./components/CounterScreen');
+
+var _CounterScreen2 = babelHelpers.interopRequireDefault(_CounterScreen);
+
+var App = (0, _reactNavigation.StackNavigator)({
+    MainScreen: { screen: _MainScreen2.default },
+    CounterScreen: { screen: _CounterScreen2.default }
+});
+
+exports.default = App;
